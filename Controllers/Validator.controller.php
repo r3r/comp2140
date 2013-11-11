@@ -6,16 +6,47 @@
  */
 
 /**
- * Description of Validator
+ * Satisfies Requirements SRS2.2.10
+ * Provides a set of methods to validate the course pla
  *
  * @author ritesh
  */
 class Validator {
+    
+    /**
+     *
+     * @var type CoursePlan object
+     * Holds the course plan generated
+     */
     private $coursePlan;
+    /**
+     *
+     * @var type DesiredProgramme Object
+     * Holds a desired programme object 
+     * Represents all the different programmes and their requirements the user wishies to attain
+     */
     private $desiredProgramme;
+    
+    /**
+     *
+     * @var type ProgrammeInterface Objet
+     * Holds the ProgrammeInterface Object in order to retrieve Programme information for each of the desired programme above.
+     */
     private $ProgrammeInterface;
+    /**
+     *
+     * @var type array - Errors
+     */
     private $errors;
     
+    /**
+     *
+     * @param type User $user
+     * @param type CoursePlan $coursePlan
+     * @return type Boolean True or False
+     * Validates the courseplan against faculty requirements
+     * TODO: Add Credit Requirements Satisfaction Checks
+     */
     public function validateFacultyRequirements($user, $coursePlan){
         $facqReqs = $user->getFacultyRequirements();
         $courses = $coursePlan->getCourses();
@@ -34,6 +65,7 @@ class Validator {
         }
         return True;
     }
+    
     private function prepareDesiredProgramme($major1, $major2 = "", $minor1 = "", $minor2 = ""){
         $maj1 = $this->ProgrammeInterface->callExternal(array($major1,1));
         $this->dp = new DesiredProgramme($maj1);
@@ -50,7 +82,17 @@ class Validator {
             $this->dp->setMinor2($min2);
         }
     }
-    
+    /**
+     *
+     * @param type string $major1 - First Major
+     * @param type string $major2 - Second Major
+     * @param type string $minor1 - First Minor
+     * @param type string $minor2 - Second Minor
+     * @param type User $user - User Object
+     * @return type CoursePlan
+     * @return type boolean 
+     * Validates Programme Requirements
+     */
     public function validateProgrammeRequirements($major1, $major2="", $minor1="", $minor2="", $user, $coursePlan){
         $this->prepareDesiredProgramme($major1, $major2, $minor1, $minor2);
         $plan = $coursePlan->getCourses();
@@ -72,7 +114,17 @@ class Validator {
         }
         return True;
     }
-    
+    /**
+     *
+     * @param type string $major1 - First Major
+     * @param type string $major2 - Second Major
+     * @param type string $minor1 - First Minor
+     * @param type string $minor2 - Second Minor
+     * @param type User $user - User Object
+     * @return type CoursePlan
+     * @return type boolean 
+     * Validates Course Requirements, i.e., Pre-requisiste Validation
+     */
     public function validateCourseRequirements($coursePlan, $course = null){
         if ($course != null){
             $prereqs = $course->getPreRequisites();
@@ -103,9 +155,21 @@ class Validator {
                 if(!$this->validateCourseRequirements($coursePlan, $course))
                         return False;
             }
+            return True;
         }
     }
     
+    /**
+     *
+     * @param type string $major1 - First Major
+     * @param type string $major2 - Second Major
+     * @param type string $minor1 - First Minor
+     * @param type string $minor2 - Second Minor
+     * @param type User $user - User Object
+     * @return type CoursePlan
+     * @return type boolean 
+     * Validates all Programme, Course and Faculty Requirements
+     */
     public function validateAll($major1, $major2 = "", $minor1="", $minor2="",$user, $coursePlan){
         return $this->validateCourseRequirements($coursePlan) &&
                $this->validateFacultyRequirements($user, $coursePlan) &&

@@ -6,14 +6,32 @@
  */
 
 /**
- * Description of ExternalInterface
+ * Base class for all out of system communication
+ * 
  *
  * @author ritesh
  */
 class ExternalInterface {
+    /**
+     *
+     * @var type string Base url - Holds the base url for calls
+     */
     private $url;
+    /**
+     *
+     * @var type array - Errors
+     */
     protected $errors;
+    /**
+     *
+     * @var type JSON array
+     */
     protected $data;
+    
+    function __construct($url = "") {
+        $this->url = $url;
+    }
+
     public function getUrl() {
         return $this->url;
     }

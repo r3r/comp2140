@@ -6,22 +6,30 @@
  */
 
 /**
- * Description of ProgrammeInterface
+ * Satisfies Requirements 2.2.11
+ * Solicits external system for Programme information
  *
  * @author ritesh
  */
 class ProgrammeInterface extends ExternalInterface{
     /**
      *
-     * @var type CourseInterface
+     * @var type CourseInterface Object
+     * Holds a CourseInterface Object for querying course information
      */
     private $CourseInterface;
     /**
      *
-     * @var type Programme
+     * @var type Programme Object
+     * Holds the Programe Object solicited
      */
     private $programme;
     
+    /**
+     * @override
+     * @param type string $programme - name of the programme
+     * @return type Programme/Null; Programme object if successful, null otherwise
+     */
     public function callExternal($programme) {
         $function = $programme;
         parent::callExternal($function);

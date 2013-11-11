@@ -13,7 +13,7 @@
 class User {
     private $uId;
     private $password;
-    private $userCoursePasses; //UserCoursePasses Object
+    private $userCoursePasses; //Courses Object
     private $facultyReqs; //Courses Object
     private $minSemesterCredits; //Array el[0] min for sem 1, el[1] min for sem 2
     private $maxSemesterCredits; //Array el[0] max for sem 1, el[1] max for sem 2

@@ -6,22 +6,29 @@
  */
 
 /**
- * Description of StudentRecordInterface
+ * Satisfies Requirements 2.2.12
+ * Solicits external system for user information
  *
  * @author ritesh
  */
 class StudentRecordInterface extends ExternalInterface {
     /**
      *
-     * @var type UserCoursePasses
+     * @var type User
+     * Holds the User Record solicited
      */
-    private $userPasses;
+    private $user;
     
+    /**
+     *
+     * @param type array $user uId and Password
+     * @return type User Object
+     */
     public function callExternal($user){
         $function = $user;
         if(parent::callExternal($function) != NULL){
-            if($this->parseJSONToUserPass() != NULL){
-                return $this->userPasses;                
+            if($this->parseJSONtoUser() != NULL){
+                return $this->user;                
             }
             else {
                 return $this->getErrors();
@@ -32,7 +39,7 @@ class StudentRecordInterface extends ExternalInterface {
         }
     }
     
-    private function parseJSONToUserPass(){
+    private function parseJSONToUser(){
         
     }
 

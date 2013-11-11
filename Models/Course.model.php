@@ -13,23 +13,24 @@ class Course {
     private $courseTitle;
     private $courseCode;
     private $department;
+    private $level;
     private $semestersAvaliable;
     private $semesterTaken;
     private $year;
     private $credits;
     private $faculty;
     private $prerequistes;
-    private $corequistes;
     
-    function __construct($courseTitle, $courseCode, $department, $semestersAvaliable, $credits, $faculty, $prerequistes, $corequistes) {
+    
+    function __construct($courseTitle, $courseCode, $department, $level, $semestersAvaliable, $credits, $faculty, $prerequistes) {
         $this->courseTitle = $courseTitle;
         $this->courseCode = $courseCode;
         $this->department = $department;
+        $this->level = $level;
         $this->semestersAvaliable = $semestersAvaliable;
         $this->credits = $credits;
         $this->faculty = $faculty;
         $this->prerequistes = $prerequistes;
-        $this->corequistes = $corequistes;
     }
 
     
@@ -106,14 +107,16 @@ class Course {
         $this->prerequistes = $prerequistes;
     }
 
-    public function getCorequistes() {
-        return $this->corequistes;
+    public function getLevel() {
+        return $this->level;
     }
 
-    public function setCorequistes($corequistes) {
-        $this->corequistes = $corequistes;
+    public function setLevel($level) {
+        $this->level = $level;
     }
 
+
+    
 
 
 }
