@@ -6,13 +6,14 @@
  */
 
 /**
- * Description of CoursePlan
+ * CoursePlan Model
+ * This model extends the Courses model which is a course aggregate.
+ * It provides a more convenient and efficient storage of coursecodes appropriate for the necessary methods required for this data object.
  *
  * @author ritesh
  */
 class CoursePlan extends Courses{
-    //put your code here
-    /**
+     /**
      *
      * @var type array(array())
      * Holds the courseCodes of the different courses under different semesters in a two

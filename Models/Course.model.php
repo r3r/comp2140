@@ -5,20 +5,63 @@
  */
 
 /**
- * Description of Course
+ * Course Model
+ * Represents a University Course
  *
  * @author ritesh
  */
 class Course {
+    /**
+     *
+     * @var type string
+     */
     private $courseTitle;
+    /**
+     *
+     * @var type string
+     */
     private $courseCode;
+    /**
+     *
+     * @var type string
+     */
     private $department;
+    /**
+     *
+     * @var type int
+     */
     private $level;
+    /**
+     *
+     * @var type array(int)
+     */
     private $semestersAvaliable;
+    /**
+     *
+     * @var type int
+     * The semester in which this course is taken
+     */
     private $semesterTaken;
+    /**
+     *
+     * @var type int
+     * Year of Study Course is taken 
+     */
     private $year;
+    /**
+     *
+     * @var type ints
+     */
     private $credits;
+    /**
+     *
+     * @var type string
+     */
     private $faculty;
+    /**
+     *
+     * @var type array(courseCodes)
+     */
     private $prerequistes;
     
     

@@ -6,18 +6,54 @@
  */
 
 /**
- * Description of User
+ * User Model
+ * Represents a User
+ * Is used to store a user's details, including the courses passsed to date.
  *
  * @author ritesh
  */
 class User {
+    /**
+     *
+     * @var type string - User Id
+     */
     private $uId;
+    /**
+     *
+     * @var type string password
+     */
     private $password;
+    /**
+     *
+     * @var type Courses 
+     */
     private $userCoursePasses; //Courses Object
+    /**
+     *
+     * @var type Courses
+     */
     private $facultyReqs; //Courses Object
-    private $minSemesterCredits; //Array el[0] min for sem 1, el[1] min for sem 2
-    private $maxSemesterCredits; //Array el[0] max for sem 1, el[1] max for sem 2
+    /**
+     *
+     * @var type array(int)
+     * Array el[0] min for sem 1, el[1] min for sem 2
+     */
+    private $minSemesterCredits; 
+    /**
+     *
+     * @var type array(int)
+     * //Array el[0] max for sem 1, el[1] max for sem 2
+     */    
+    private $maxSemesterCredits; 
+    /**
+     *
+     * @var type int
+     */
     private $minCredits;
+    /**
+     *
+     * @var type int
+     */
     private $maxCredits;
     
     

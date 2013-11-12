@@ -1,0 +1,5 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$class_course_interface.html" title="CourseInterface" alt="" coords="5,83,120,112"/>
+<area shape="rect" id="node5" href="$class_programme_interface.html" title="ProgrammeInterface" alt="" coords="144,83,283,112"/>
+<area shape="rect" id="node7" href="$class_student_record_interface.html" title="StudentRecordInterface" alt="" coords="307,83,467,112"/>
+</map>

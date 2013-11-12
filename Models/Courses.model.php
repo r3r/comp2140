@@ -6,13 +6,21 @@
  */
 
 /**
- * Description of Courses
+ * Courses Model
+ * This class is a wrapper model for a list of courses
  *
  * @author ritesh
  */
 class Courses {
-    //put your code here
+    /**
+     *
+     * @var type int Id to uniquely identify a list
+     */
     protected $id;
+    /**
+     *
+     * @var type array(Course) - an Array of Course Objects
+     */
     protected $courseList;
     private static $nextId = 0;
     

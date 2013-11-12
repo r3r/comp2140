@@ -6,7 +6,8 @@
  */
 
 /**
- * Description of DesiredProgramme
+ * DesiredProgramme Model
+ * Represents a Desired choice of Majors and Minors by a User
  *
  * @author ritesh
  */

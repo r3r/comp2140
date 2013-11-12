@@ -6,7 +6,9 @@
  */
 
 /**
- * Description of Programme
+ * Programme Model
+ * Represents a Programme offered by the University.
+ * It contains the programme details, along with a list of courses required for the programme.
  *
  * @author ritesh
  */
